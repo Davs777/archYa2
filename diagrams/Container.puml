@@ -1,0 +1,46 @@
+@startuml
+title CinemaAbyss Container Diagram
+
+top to bottom direction
+
+!includeurl https://raw.githubusercontent.com/RicardoNiepel/C4-PlantUML/master/C4_Component.puml
+
+Person(user, "User", "User of the application")
+Person(admin, "Admin", "Admin of the application")
+System_Ext(payment_sys, "Payment systems", "External payment systems")
+System_Ext(movie_sys, "Movie systems", "External movie systems")
+
+Container_Boundary(c, "") {
+    Container(webAplication, "Web Aplication", "React", "Ui/ux")
+    Container(api, "Proxy Service (API Gateway)", "Node.js", "Routes requests")
+
+    Container(users, "User Service", "Go", "Work with users")
+    Container(payment, "Payment Service", "Go", "Work with payments")
+    Container(movies, "Movies Service", "Go", "Work with movies")
+
+    ContainerQueue(events, "Event Service", "Go, Kafka","Communication between services ", $tags="event")
+
+    ContainerDb(usersDB, "Users DB", "PostgreSQL", "Users data")
+    ContainerDb(paymentDB, "Payments DB", "PostgreSQL", "Payments data")
+    ContainerDb(moviesDB, "Movies DB", "PostgreSQL", "Movies data")
+}
+
+
+Rel(user, webAplication, "use aplication")
+Rel(admin, webAplication, "use aplication")
+Rel(webAplication, api, "use api")
+Rel(api,users,"use service")
+Rel(api,movies,"use service")
+Rel(api,payment,"use service")
+
+Rel(payment,payment_sys,"work with payments")
+Rel(movies,movie_sys,"work with movies")
+
+BiRel(users,events,"work with events")
+BiRel(movies,events,"work with events")
+BiRel(payment,events,"work with events")
+
+Rel(users,usersDB,"read and record data")
+Rel(payment,paymentDB,"read and record data")
+Rel(movies,moviesDB,"read and record data")
+@enduml
