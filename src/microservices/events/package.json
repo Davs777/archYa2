@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "kafkajs": "^2.2.4",
+    "morgan": "^1.10.0"
+  }
+}

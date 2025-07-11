@@ -5,7 +5,7 @@
 1. Спроектируйте to be архитектуру КиноБездны, разделив всю систему на отдельные домены и организовав интеграционное взаимодействие и единую точку вызова сервисов.
 Результат представьте в виде контейнерной диаграммы в нотации С4.
 Добавьте ссылку на файл в этот шаблон
-[ссылка на файл](ссылка)
+[ссылка на файл](www.plantuml.com/plantuml/png/ZPJFRjiu48VlUefPOWysa8qlUrfWWVXF4HHD0YT1qACnaYOs6v5KoQ4TeUYxLwH5LPLTeoTQd8-VXZzIld6CbhsgCfPS4Iob9eNpl74EbaOpjiyMLXAt5bMMiQc13UI6sIWefQM2fT5PzfVKHULByhQ27NFj_flDB1wkjv9tFlUERD7QIFDrOTJiIHPeI_CWgQPgjlptdtM5cb_kxsOA7PDjfpPBesgZmuewj9UjoJgZ9q5r1UAb7KGtWda5tX5WNLUjE3Gafed7KadTWlCmYlJZ_9BdnZ6fpOTtdjJOADAySOrhrwoFJ-0Yu8AcXSXghA0UrNxHABENr4dkm--pYaWD15cV_6PXl2xHDfEYNI2cy2q30EZhamFbytuBBVAPSkWdudwV20kEKScPVnVJaG1h6JPepNi3psJtiY2OpDSVuHQP3jXCmz87KzBr5nTrnZCviFJLa-FGxKWO3iYba-cCOU6j4Q4_Oz_W87a7aHktat8VP7v1qS6dbXXedxcxv8ZewJOUFNcQq3xemr7jJrgvWa_u-eRYIYoDKbvtaKDEV23Iu8wmWnR_ct7h_XTHT_AgLNxCRBNeKdEmMeYGW76yjVJyU2VwIecCOZeMfDY28WLttj8Npukwv88dPNTgIQNa-9vbsHDLtQSvlf7jBE3WAmje-Yh_Y1r1MCkUb1qIvextBXHIz8DYtDPlgrrwutAifzhm3q4Spbt1G7VlYKD2Js_QGWRss71tnGPSd0bSm9BoCZTez1AO_Nnjkd724fQ0kWHBXR5bEjCpMxz4ZxP-oNn3klIg-W40)
 
 # Задание 2
 
@@ -58,6 +58,8 @@
 
 Необходимые тесты для проверки этого API вызываются при запуске npm run test:local из папки tests/postman 
 Приложите скриншот тестов и скриншот состояния топиков Kafka из UI http://localhost:8090 
+[тесты](screenshots/2025-07-09-16.37.46.png)
+[топики в Кафке](screenshots/2025-07-09-15.41.00.png)
 
 # Задание 3
 
@@ -108,7 +110,7 @@ jobs:
 ```
 Как только сборка отработает и в github registry появятся ваши образы, можно переходить к блоку настройки Kubernetes
 Успешным результатом данного шага является "зеленая" сборка и "зеленые" тесты
-
+[тесты](screenshots/2025-07-11-12.43.36.png)
 
 ### Proxy в Kubernetes
 
@@ -274,7 +276,7 @@ cat .docker/config.json | base64
 
 #### Шаг 3
 Добавьте сюда скриншота вывода при вызове https://cinemaabyss.example.com/api/movies и  скриншот вывода event-service после вызова тестов.
-
+[ссылка](screenshots/2025-07-11-14.10.25.png)
 
 # Задание 4
 Для простоты дальнейшего обновления и развертывания вам как архитектуру необходимо так же реализовать helm-чарты для прокси-сервиса и проверить работу 
@@ -348,7 +350,8 @@ minikube tunnel
 
 Потом вызовите 
 https://cinemaabyss.example.com/api/movies
-и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
+и приложите скриншот вывода https://cinemaabyss.example.com/api/movies
+[ссылка](screenshots/2025-07-11-14.10.25.png)
 
 ## Удаляем все
 
