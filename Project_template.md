@@ -110,7 +110,7 @@ jobs:
 ```
 Как только сборка отработает и в github registry появятся ваши образы, можно переходить к блоку настройки Kubernetes
 Успешным результатом данного шага является "зеленая" сборка и "зеленые" тесты
-
+[тесты](screenshots/2025-07-11-12.43.36.png)
 
 ### Proxy в Kubernetes
 
@@ -350,7 +350,8 @@ minikube tunnel
 
 Потом вызовите 
 https://cinemaabyss.example.com/api/movies
-и приложите скриншот развертывания helm и вывода https://cinemaabyss.example.com/api/movies
+и приложите скриншот вывода https://cinemaabyss.example.com/api/movies
+[ссылка](screenshots/2025-07-11-14.10.25.png)
 
 ## Удаляем все
 
